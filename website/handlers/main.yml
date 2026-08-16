@@ -1,0 +1,7 @@
+---
+# handlers file for website
+- name: starting service
+  service:
+    name: "httpd"
+    state: restarted
+    enabled: true

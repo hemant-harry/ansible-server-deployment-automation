@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ansible Web Server</title>
+</head>
+<body>
+
+    <h1>Welcome to Ansible Web Server</h1>
+
+    <h2>Server Information</h2>
+
+    <p><b>Hostname:</b> {{ ansible_hostname }}</p>
+    <p><b>Private IP:</b> {{ ansible_default_ipv4.address }}</p>
+    <p><b>Operating System:</b> {{ ansible_distribution }} {{ ansible_distribution_version }}</p>
+
+    <p><b>Managed By:</b> Ansible</p>
+
+</body>
+</html>

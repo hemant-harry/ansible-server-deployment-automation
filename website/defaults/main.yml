@@ -1,0 +1,8 @@
+---
+# defaults file for website
+software_package:  
+ - httpd
+ - php
+ - git
+
+repo_link: https://github.com/hemant-harry/ansible_pratics.git

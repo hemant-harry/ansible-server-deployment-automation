@@ -1,0 +1,26 @@
+---
+# tasks file for website
+- name: install package
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ software_package }}"
+
+- name: setting up configuration
+  template:
+    src: "my.conf.j2"
+    dest: "/etc/httpd/conf.d/my.conf"
+
+- name: Deploy dynamic website
+  template:
+    src: "index.php.j2"
+    dest: "/var/www/html/server.php"
+  notify: starting service
+
+
+- name: deploying from github
+  git:
+    repo: "{{ repo_link }}"
+    dest: "/var/www/html/index.php"
+  notify: starting service
+
